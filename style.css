@@ -1,26 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
-.logo{
-    width: 20px;
-    padding: 0 auto;
+.logo {
+    width: 9.3vw;
+    height: 6.5vh;
+    padding-top: 1.3vh;
+    margin-left: 3.1vw;
 }
-body {
-    background-color: #F3F5FC;
+
+* {
     font-family: 'Inter', sans-serif;
+    background: #F3F5FC;
 }
 
 main {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+
 }
 
-button{
+.text-area {
+    position: absolute;
+    left: 12vw;
+    top: 23vh;
+    border: none;
+    width: 45vw;
+    height: 6.5vh;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.warning-container {
+    position: absolute;
+    top: 74vh;
+    left: 12vw;
+}
+
+.buttons-container {
+    position: absolute;
+    width: 53vw;
+    height: 9.2vh;
+    left: 10vw;
+    top: 80vh;
+}
+
+button {
     background-color: aqua;
     border-radius: 1.5rem;
-    width: 25.6vw;
-    height: 10vh;
+    width: 22vw;
+    height: 8vh;
     border: 1px solid #0A3871;
-
+    margin: 1.5vw;
 }
 
 .button-encriptar {
@@ -33,8 +62,37 @@ button{
     color: #0A3871;
 }
 
-.message-containe {
+.message-container {
+    position: absolute;
+    top: 5vh;
+    width: 27.2vw;
+    height: 90vh;
     background-color: #ffffff;
-    width: 30px;
-    height: 50px;
+    border-radius: 2.5vw;
+    box-shadow: 0px 1.87vh 2.5vw -0.62vw rgba(0, 0, 0, 0.08);
+}
+
+/* WIP */
+.message-container p,
+.message-img,
+h2 {
+    background: #ffffff;
+}
+
+/* WIP */
+
+.message-img {
+    margin-top: 8vh;
+    width: 25vw;
+}
+
+.message-container p {
+    text-align: center;
+    font-size: 1rem;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
