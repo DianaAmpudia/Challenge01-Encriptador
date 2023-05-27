@@ -1,6 +1,22 @@
+function validateMessage(){
+    let message = document.querySelector(".text-area").value;
+    let validateText = message.match(/^[a-z ]*$/);
+
+    console.log(validateText);
+
+    if(!validateText || validateText === 0) {
+        alert("Solo son permitidas letras minúsculas y sin acentos. Ingresa el texto nuevamente siguiendo las indicaciones.")
+        location.reload()
+        return true;
+    }
+}
+
+
 function encryptMessage() {
     let message = document.querySelector(".text-area").value;
     let encryptedMessage = "";
+
+    if(!validateMessage()) {
 
     for (let i = 0; i < message.length; i++) {
         if (message[i] == "a") {
@@ -27,7 +43,7 @@ function encryptMessage() {
     console.log(encryptedMessage)
     document.querySelector(".output-text").value = encryptedMessage;
     return encryptedMessage;
-
+    }
 }
 
 function decodeMessage(){
@@ -65,8 +81,7 @@ function decodeMessage(){
     console.log(decodedMessage);
     document.querySelector(".output-text").value = decodedMessage;
     return decodedMessage;
-
-}
+    }
 
 function warningTextDisplay () {
     const messageWarning = document.querySelector(".insert-text-container");
@@ -79,6 +94,8 @@ function warningTextDisplay () {
     copyButton.style.display = 'inline';
 }
 
+
+
 const encryptButton = document.querySelector(".button-encriptar");
 encryptButton.addEventListener("click", () => {
     warningTextDisplay()
@@ -89,6 +106,12 @@ const decodeButton = document.querySelector(".button-desencriptar");
 decodeButton.addEventListener("click", () => {
     warningTextDisplay()
     decodeMessage() 
+})
+
+const copyButton = document.querySelector(".button-copy"); 
+copyButton.addEventListener("click", () => {
+    let copyText = document.querySelector(".output-text").value;
+    navigator.clipboard.writeText(copyText);
 })
 
 
